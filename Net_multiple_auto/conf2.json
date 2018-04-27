@@ -1,0 +1,76 @@
+{
+	"op_type": "feature_extraction",
+	
+	"general":{
+		"noise"		: 0.00000001,
+		"directory"	: "y:/Anomalies/subway/exit/multi",
+		"models"	:	 
+		[
+			{
+				"flist"		: "y:/Anomalies/subway/exit/train_angular.lst",
+				"name"		: "angular_x5",		
+				"norm_factor"	: 180
+			},
+			{
+				"flist"		: "y:/Anomalies/subway/exit/train_radial.lst",
+				"name"		: "radial_x5",
+				"norm_factor"	: 150				
+			}
+		],
+		"numcfile"  : "y:/Anomalies/subway/exit/centers.lst"
+	},
+	
+	"train_models" 	: {
+		"img_token"	: ".png",
+		"test_size"	: 0.05,
+		"batch_size": 128,
+		"epochs"	: 200
+	},
+	
+	"save_feats" 	: {
+	},
+	
+	"feature_extraction" 	: {
+		"model_pos"	: 0,
+		"flist"		: "y:/Anomalies/subway/exit/train_angular.lst"
+		
+	},
+			
+	"train": {
+		"model_pos"	: 0,	
+		"img_token"	: ".png",
+		"test_size"	: 0.1,
+		"batch_size": 128,
+		"epochs"	: 500
+	},
+	
+	"test": {
+		"model_pos"	: 0,
+		"out_file"	: "sorted_3i.txt",
+		"ntest"		: 3
+	},
+	
+	"clustering": {
+		"args"	: {
+			"n_clusters"	: 16
+				},			
+		"methods"	: ["GMM"]
+	},
+	
+	"visualize" : {
+		"sub_dir"	: "GMM",
+		"width"		: 1280,
+		"height"	: 720,
+		"img_size"	: 128,
+		"nsamples"	: 50,
+		"max"		: 230,
+		"reverse"	: 0,
+		"savefig"	: 1
+	},
+	
+	"pre_clustering": {		
+		"stage"		: 10,
+		"components": 1
+	}
+	
+}

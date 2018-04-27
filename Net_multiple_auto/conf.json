@@ -1,0 +1,43 @@
+{
+	"op_type": "train",
+	
+	"general":{
+		"noise"		: 0.00000001,
+		"directory"	: "y:/research/suported/trks/nets",
+		"models"	:	 
+		[
+			{
+				"flist"		: "y:/research/suported/trks/angular.lst",
+				"name"		: "angular_x5",		
+				"norm_factor"	: 180
+			},
+			{
+				"flist"		: "y:/research/suported/trks/radial.lst",
+				"name"		: "radial_x5",
+				"norm_factor"	: 150			
+			},
+			"centersfile"	: "y:/research/suported/trks/numc.lst"
+		]
+	},
+	
+	"train_models" 	: {
+		"img_token"	: ".png",
+		"test_size"	: 0.2,
+		"batch_size": 128,
+		"epochs"	: 700
+	},
+	
+	"train": {
+		"model_pos"	: 0,	
+		"img_token"	: ".png",
+		"test_size"	: 0.1,
+		"batch_size": 128,
+		"epochs"	: 500
+	},
+	
+	"test": {
+		"model_pos"	: 1,
+		"out_file"	: "sorted_3i.txt",
+		"ntest"		: 3
+	}	
+}
